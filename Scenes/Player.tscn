@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://da8i3tdw8jv2s"]
+
+[ext_resource type="Script" uid="uid://brkqogvmt5sr7" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://b020jrt2tyto5" path="res://Assets/Sprites [Enemies]/Mushroom/Mushroom_1/Idle/Idle_R_1.png" id="1_rpqav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1210853196]
+script = ExtResource("1_kyqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2024107947]
+texture = ExtResource("1_rpqav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1559230324]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_kyqiw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1262164792]
+zoom = Vector2(3.5, 3.5)
