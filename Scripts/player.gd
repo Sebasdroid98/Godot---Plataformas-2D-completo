@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 125
 const JUMP_VELOCITY = -260
 
+@onready var anim = $Sprite2D
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,7 +21,18 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		anim.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+	#Se establece la animación de saltar, caminar y reposo
+	if not is_on_floor() && velocity.y < 0:
+		anim.play("Jump")
+	elif direction != 0:
+		anim.play("Walk")
+	else:
+		anim.play("Idle")
+	
+	 
