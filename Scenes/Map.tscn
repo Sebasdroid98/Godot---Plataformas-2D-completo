@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://da8i3tdw8jv2s" path="res://Scenes/Player.tscn" id="2_7yn8b"]
 [ext_resource type="PackedScene" uid="uid://da6xeu0idx3e8" path="res://Scenes/Coin.tscn" id="3_etk83"]
 [ext_resource type="PackedScene" uid="uid://bwcheped52dq3" path="res://Scenes/UI.tscn" id="4_qumfl"]
+[ext_resource type="PackedScene" uid="uid://bh1hsfm0p25i6" path="res://Scenes/Killzone.tscn" id="5_r08cw"]
+[ext_resource type="PackedScene" uid="uid://pf60wwetirwu" path="res://Scenes/Bee.tscn" id="6_00287"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yn8b"]
 texture = ExtResource("1_s486e")
@@ -365,3 +367,12 @@ position = Vector2(540, 329)
 position = Vector2(328, 307)
 
 [node name="UI" parent="." unique_id=1432000695 instance=ExtResource("4_qumfl")]
+
+[node name="Killzone" parent="." unique_id=1306110339 instance=ExtResource("5_r08cw")]
+position = Vector2(2, 638)
+
+[node name="Bee" parent="." unique_id=1384543114 instance=ExtResource("6_00287")]
+position = Vector2(250, 392)
+
+[node name="Bee2" parent="." unique_id=2074810707 instance=ExtResource("6_00287")]
+position = Vector2(360, 384)
