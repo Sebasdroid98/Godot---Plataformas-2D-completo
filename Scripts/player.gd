@@ -9,6 +9,9 @@ const JUMP_VELOCITY = -260
 var coins = 0 # Contador de monedas
 @onready var hud = get_node("/root/Map/UI") # Referencia al UI
 
+# Variable para controlar el sonido al saltar
+@onready var jump_sound = $AudioStreamPlayer2D
+
 # Establecer monedas
 func add_coins():
 	coins += 1
@@ -22,6 +25,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

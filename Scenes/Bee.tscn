@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3tjwup8kwpck" path="res://Assets/Sprites [Enemies]/Bee/Bee.png" id="1_o7wem"]
 [ext_resource type="Script" uid="uid://b41we6a7m16p4" path="res://Scripts/bee.gd" id="1_ug8hw"]
+[ext_resource type="AudioStream" uid="uid://c80g7l3pbyea8" path="res://MusicAndSounds/Sonidos/BeeFlying.mp3" id="3_rtnth"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug8hw"]
 atlas = ExtResource("1_o7wem")
@@ -64,6 +65,13 @@ shape = SubResource("RectangleShape2D_bxir8")
 [node name="BottomBee" type="CollisionShape2D" parent="Area2DBottom" unique_id=454165513]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_bjtr2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1467907927]
+stream = ExtResource("3_rtnth")
+volume_db = -5.297
+autoplay = true
+max_distance = 150.0
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2DTop" to="." method="_on_area_2d_top_body_entered"]
 [connection signal="body_entered" from="Area2DBottom" to="." method="_on_area_2d_bottom_body_entered"]
