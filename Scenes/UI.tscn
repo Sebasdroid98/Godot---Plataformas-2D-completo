@@ -31,3 +31,17 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 75
 text = "000"
+
+[node name="BtnExit" type="Button" parent="Control" unique_id=354403937]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1055.0
+offset_top = 5.0
+offset_right = 1107.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "SALIR"
+
+[connection signal="pressed" from="Control/BtnExit" to="." method="_on_btn_exit_pressed"]
